@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	var myID = setInterval(function(){
+		$("body").append( $("<p></p>").html(new Date()) );
+	},1000);
+	
+	setTimeout(function(){
+		clearInterval(myID);
+	},10000);
+})
+</script>
+</head>
+<body>
+
+
+
+
+
+
+
+</body>
+</html>

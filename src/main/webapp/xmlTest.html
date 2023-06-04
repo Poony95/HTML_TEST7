@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.box{
+		width: 150px;
+		height: 150px;
+		border: solid 2px black;
+		border-radius: 10px;
+		padding: 10px;
+		margin: 10px;
+	}
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script type="text/javascript">
+	var data  = "";
+	data += "<dept_list>";
+	data += "<dept>";
+	data += "<dno>10</dno>";
+	data += "<dname>총무팀</dname>";
+	data += "<dloc>서교동</dloc>";
+	data += "</dept>"
+	data += "<dept>";
+	data += "<dno>20</dno>";
+	data += "<dname>기획팀</dname>";
+	data += "<dloc>판교</dloc>";
+	data += "</dept>"
+	data += "<dept>";
+	data += "<dno>30</dno>";
+	data += "<dname>개발1팀</dname>";
+	data += "<dloc>판교</dloc>";
+	data += "</dept>"
+	data += "<dept>";
+	data += "<dno>40</dno>";
+	data += "<dname>개발2팀</dname>";
+	data += "<dloc>판교</dloc>";
+	data += "</dept>"
+	data += "</dept_list>";
+	
+	$(function(){
+		console.log(data);
+		var xmlDoc = $.parseXML(data);
+		$(xmlDoc).find("dept").each(function(){
+			var dno = $(this).find("dno").text();
+			var dname = $(this).find("dname").text();
+			var dloc = $(this).find("dloc").text();
+			
+			var div = $("<div></div>").addClass("box");
+			var p1 = $("<p></p>").html(dno);
+			var p2 = $("<p></p>").html(dname);
+			var p3 = $("<p></p>").html(dloc);
+			$(div).append(p1,p2,p3);
+			$("body").append(div);
+		});
+		
+	});
+	
+	
+</script>
+</head>
+<body>	 
+</body>
+</html>
+
+
+
+
+
